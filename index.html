@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASCII Art Generator</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="main-container">
+  <header>
+    <h1>ASCII_MATIC <span>v1.0</span></h1>
+    <label class="upload-btn">
+      <input type="file" id="imageInput" accept="image/*" hidden>
+      <i class="fas fa-camera"></i> UPLOAD IMAGE
+    </label>
+  </header>
+
+  <div class="controls">
+    <div class="slider-group">
+      <label>Resolution (Width)</label>
+      <input type="range" id="resolution" min="50" max="200" value="100">
+      <span id="res-val">100 chars</span>
+    </div>
+    <div class="slider-group">
+      <label>Contrast</label>
+      <input type="range" id="contrast" min="0" max="2" step="0.1" value="1">
+    </div>
+    <button onclick="downloadAscii()" id="dl-btn" disabled>COPY TEXT</button>
+  </div>
+
+  <div class="output-frame">
+    <pre id="ascii-output">
+  __  __       _     _      
+ |  \/  | __ _| |_  (_) ___ 
+ | |\/| |/ _` | __| | |/ __|
+ | |  | | (_| | |_  | | (__ 
+ |_|  |_|\__,_|\__| |_|\___|
+             
+ Upload an image to start...
+    </pre>
+  </div>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
